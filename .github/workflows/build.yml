@@ -9,12 +9,16 @@ jobs:
   build:
     name: Build Android
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [Android32, Android64]
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          target: Android
-          platform: Android64
+          target: ${{ matrix.target }}
           
