@@ -12,14 +12,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [Android32, Android64]
+        config:
+          - name: Android64
+            target: Android64
+          - name: Android32
+            target: Android32
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Build Mod
-        uses: geode-sdk/build-geode-mod@main
+        uses: geode-sdk/build-geode-mod@v2
         with:
-          target: ${{ matrix.target }}
-          sdk: v4.0.0
+          target: ${{ matrix.config.target }}
           
