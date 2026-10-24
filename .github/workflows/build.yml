@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build Mod
+    name: Build Android
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,4 +16,5 @@ jobs:
         uses: geode-sdk/build-geode-mod@main
         with:
           target: Android
+          platform: Android64
           
