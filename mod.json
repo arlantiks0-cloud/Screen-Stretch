@@ -1,0 +1,11 @@
+{
+  "geode": "4.0.0",
+  "gd": {
+    "android": "22040"
+  },
+  "id": "tvoj.screen.stretch",
+  "name": "Screen Stretch",
+  "version": "1.0.0",
+  "developer": "Ты",
+  "description": "Мод для постоянного растяжения экрана в Geometry Dash"
+}
