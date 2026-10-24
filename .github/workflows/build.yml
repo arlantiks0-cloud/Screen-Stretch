@@ -7,26 +7,13 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - name: Android32
-            os: ubuntu-latest
-            target: Android32
-          - name: Android64
-            os: ubuntu-latest
-            target: Android64
-
-    name: Build ${{ matrix.config.name }}
-    runs-on: ${{ matrix.config.os }}
-
+    name: Build Android
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Build Mod
-        uses: geode-sdk/build-geode-mod@main
+        uses: geode-sdk/build-geode-mod@v3
         with:
-          sdk: nightly
-          target: ${{ matrix.config.target }}
-
+          target: Android
+          
